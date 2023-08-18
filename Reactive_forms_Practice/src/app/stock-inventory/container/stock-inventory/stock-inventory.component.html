@@ -1,1 +1,17 @@
-<p>stock-inventory works! Welcome</p>
+<div class="form_group">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div formGroupName="store">
+            <input formControlName="branch" type="text" placeholder="Submit Manager">
+            <input formControlName="code" type="text" placeholder="Submit Code">
+        </div>
+
+        <div>
+            <button type="submit" [disabled]="form.invalid"> Submit Details</button>
+        </div>
+
+    </form>
+</div>
+
+<pre> {{form.value | json}} </pre>
