@@ -2,10 +2,19 @@
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <div formGroupName="store">
-            <input formControlName="branch" type="text" placeholder="Submit Manager">
-            <input formControlName="code" type="text" placeholder="Submit Code">
-        </div>
+        <app-stock-branch [parent]="form">
+
+        </app-stock-branch>
+
+        <app-stock-prodect [parent]="form">
+            [products]="products"
+        </app-stock-prodect>
+
+        <app-stock-selector [parent]="form">
+
+        </app-stock-selector>
+
+
 
         <div>
             <button type="submit" [disabled]="form.invalid"> Submit Details</button>
